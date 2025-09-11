@@ -14,19 +14,19 @@ Two players press buttons to “pull” a light toward their side; the first pla
   - Freezes the game state until reset.
 
 # Structure
-├── TugOfWar.sv          # Top-level module
+|── TugOfWar.sv          # Top-level module
 
-├── Synchronizer.sv
+|── Synchronizer.sv
 
-├── EdgeDetector.sv
+|── EdgeDetector.sv
 
-├── NormalLight.sv
+|── NormalLight.sv
 
-├── CenterLight.sv
+|── CenterLight.sv
 
-├── EdgeLight.sv
+|── EdgeLight.sv
 
-├── Victory.sv
+|── Victory.sv
 
 # Usage
 1.	Clone this repository.
@@ -41,8 +41,8 @@ Two players press buttons to “pull” a light toward their side; the first pla
 
 # Simulation
 Test benches are provided using the naming format *_tb.sv. You can simulate using:
-  iverilog  -g2012 -o test.vvp filename.sv filename_tb.sv
-  vvp test.vvp
-  gtkwave dump.vcd
+1. iverilog  -g2012 -o test.vvp filename.sv filename_tb.sv
+2. vvp test.vvp
+3. gtkwave dump.vcd
 
  
