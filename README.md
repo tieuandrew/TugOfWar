@@ -33,11 +33,11 @@ Two players press buttons to “pull” a light toward their side; the first pla
 2.	Open the project in Intel Quartus Prime.
 3.	Compile and program to the DE1-SoC FPGA board.
 4.	Play:
-  •	 Press KEY[3] for Player 1 (Left).
-  •	Press KEY[0] for Player 2 (Right).
-  •	Watch the LEDs shift like a tug-of-war rope.
-  •	When one side reaches the edge, HEX0 displays the winner.
-  •	Flip SW[9] to reset.
+   *	 Press KEY[3] for Player 1 (Left).
+   *	 Press KEY[0] for Player 2 (Right).
+   *	 Watch the LEDs shift like a tug-of-war rope.
+   *	 When one side reaches the edge, HEX0 displays the winner.
+   *	 Flip SW[9] to reset.
 
 # Simulation
 Test benches are provided using the naming format *_tb.sv. You can simulate using:
