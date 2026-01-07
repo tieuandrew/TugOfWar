@@ -61,20 +61,31 @@ All game logic updates only when `CE` is asserted, keeping timing safe and human
 
 ## File Structure
 
-├── TopLevel.sv        # Board I/O + clock-enable generation
-├── TugOfWar.sv        # Main game integration
-├── ClockDivider.sv    # Clock-enable generator
-├── Synchronizer.sv    # Button synchronization
-├── EdgeDetector.sv    # One-cycle pulse generation
-├── LFSR.sv            # Pseudo-random generator
-├── NineBitAdder.sv    # Computer pull decision logic
-├── CenterLight.sv     # Center LED FSM
-├── NormalLight.sv     # Interior LED FSMs
-├── EdgeLight.sv       # Edge LED FSMs + win detection
-├── Counter.sv         # Score counter + HEX output
+|── TopLevel.sv        # Board I/O + clock-enable generation
 
+|── TugOfWar.sv        # Main game integration
 
-# Usage
+|── ClockDivider.sv    # Clock-enable generator
+
+|── Synchronizer.sv    # Button synchronization
+
+|── EdgeDetector.sv    # One-cycle pulse generation
+
+|── LFSR.sv            # Pseudo-random generator
+
+|── NineBitAdder.sv    # Computer pull decision logic
+
+|── CenterLight.sv     # Center LED FSM
+
+|── NormalLight.sv     # Interior LED FSMs
+
+|── EdgeLight.sv       # Edge LED FSMs + win detection
+
+|── Counter.sv         # Score counter + HEX output
+
+---
+
+## Usage
 1.	Clone this repository.
 2.	Open the project in Intel Quartus Prime.
 3.	Compile and program to the DE1-SoC FPGA board.
@@ -84,7 +95,9 @@ All game logic updates only when `CE` is asserted, keeping timing safe and human
    * Scores update on `HEX5` and `HEX0`
    * Reset anytime with `SW[9]`
 
-# Simulation
+---
+
+## Simulation
 Test benches are provided using the naming format *_tb.sv. You can simulate using:
 1. iverilog  -g2012 -o test.vvp filename.sv filename_tb.sv
 2. vvp test.vvp
