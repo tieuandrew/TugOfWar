@@ -2,7 +2,7 @@
 
 // This module controls a light with a simple state machine based on button presses and neighboring states.
 module NormalLight (
-    input logic clk, reset,
+    input logic clk, reset, CE,
 
     // L, R: indicate key presses (left and right)
     // NL, NR: indicate whether neighboring lights are on
@@ -42,7 +42,7 @@ module NormalLight (
     always_ff @(posedge clk) begin
         if (reset)
                 present_state <= OFF;  // Reset the state to OFF
-        else
+        else if (CE)
                 present_state <= next_state;  // Transition to the next state
     end
 

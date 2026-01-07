@@ -4,6 +4,7 @@ module CenterLight (
     input logic clk,
     input logic reset,
     input logic L, R, NL, NR,
+    input logic CE,
     output logic lightOn
 );
 
@@ -13,7 +14,7 @@ module CenterLight (
     always_ff @(posedge clk) begin
         if (reset)
             present_state <= ON;
-        else
+        else if (CE)
             present_state <= next_state;
     end
 

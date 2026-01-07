@@ -3,6 +3,7 @@
 module EdgeLight (
     input logic clk,
     input logic reset,
+    input logic CE,
     input logic neighbor,
     input logic turnOn, turnOff,
     output logic lightOn
@@ -14,13 +15,12 @@ module EdgeLight (
     always_ff @(posedge clk) begin
         if (reset)
             present_state <= OFF; // On reset, set present_state to OFF
-        else
+        else if (CE)
             present_state <= next_state; // Update present_state with next_state
     end
 
     always_comb
-        case
-            (present_state)
+        case (present_state)
                 OFF:
                     if (neighbor & turnOn & ~turnOff)
                         next_state = ON;
